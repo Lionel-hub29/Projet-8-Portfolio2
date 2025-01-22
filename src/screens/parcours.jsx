@@ -29,7 +29,7 @@ const images = [
   {
     img: Image3,
     description: "Coordinateur Paie",
-    description2: "Celio*",
+    description2: "Celio* ",
     description3: "2011 - 2018",
   },
 
