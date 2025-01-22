@@ -1,0 +1,32 @@
+.contact {
+   background-image: url(../../assets/images/computer1.jpg);
+   opacity: 0.7;
+}
+
+.title-form {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 20px;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-card {
+    width: 600px;
+    border-radius: 30px;
+    border: 1px solid;
+    padding: 20px 10px;
+    background-color: rgb(88, 86, 86, 0.7);   
+}
+
+.button-submit {
+    display: flex;
+    justify-content: center;
+  
+}
