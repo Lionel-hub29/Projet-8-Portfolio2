@@ -12,19 +12,25 @@ function ScrollToAnchor() {
 
   useEffect(() => {
     if (hash) {
-      // Si on est déjà sur la bonne page (par exemple, la page d'accueil), on scrolle directement
-      if (pathname === "/") {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Si on n'est PAS sur la page d'accueil, on navigue vers la page avec l'ancre
-        // Utilisation de `navigate` avec le `hash` dans l'URL
-        navigate(`${pathname}${hash}`, { replace: true });
+      // Si nous avons un hash, nous naviguons vers cet élément
+      const element = document.querySelector(hash);
+      if (element) {
+        // Scroll vers l'élément avec un défilement fluide
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [hash, pathname, navigate]);
+  }, [pathname, hash]); // D'autres mises à jour de `pathname` ou `hash` déclencheront un scroll
+
+  useEffect(() => {
+    if (pathname === "/" && hash) {
+      // S'il s'agit de la page d'accueil et qu'il y a un hash dans l'URL,
+      // nous scrollerons vers l'élément approprié.
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [pathname, hash]);
 
   return null;
 }
