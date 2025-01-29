@@ -28,12 +28,12 @@ function Header() {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="#presentation">
+                    <Link className="nav-link" to="/#presentation">
                       Présentation
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#projets">
+                    <Link className="nav-link" to="/#projets">
                       Projets
                     </Link>
                   </li>
@@ -43,7 +43,7 @@ function Header() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#contact">
+                    <Link className="nav-link" to="/#contact">
                       Contact
                     </Link>
                   </li>
