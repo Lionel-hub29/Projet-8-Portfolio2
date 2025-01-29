@@ -20,15 +20,23 @@ function ScrollToAnchor() {
           element.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
-    }
-  }, [pathname, hash]); // Déclenchement uniquement si le pathname ou le hash change
-
-  useEffect(() => {
-    if (pathname !== "/" && hash) {
-      // Si le hash est présent et qu'on n'est pas sur la page d'accueil, on navigue d'abord vers "/"
-      navigate("/", { replace: true });
+    } else if (hash && pathname !== "/") {
+      // Si nous ne sommes pas sur la page d'accueil et qu'un hash est présent
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Délai pour laisser le temps au changement de page
     }
   }, [pathname, hash, navigate]);
+
+  useEffect(() => {
+    // Réinitialisation du scroll en cas de navigation vers la page d'accueil
+    if (pathname !== "/" && !hash) {
+      window.scrollTo(0, 0); // Remet le scroll au tout début de la page
+    }
+  }, [pathname, hash]);
 
   return null;
 }
