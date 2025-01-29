@@ -7,30 +7,18 @@ import Router from "./Router.jsx";
 
 // Composant pour gérer le scroll vers les ancres
 function ScrollToAnchor() {
-  const { pathname, hash } = useLocation();
-  const navigate = useNavigate();
+  const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
-      // Si nous avons un hash, nous naviguons vers cet élément
+      // Trouver l'élément cible
       const element = document.querySelector(hash);
       if (element) {
-        // Scroll vers l'élément avec un défilement fluide
+        // Scroller vers cet élément avec un effet fluide
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [pathname, hash]); // D'autres mises à jour de `pathname` ou `hash` déclencheront un scroll
-
-  useEffect(() => {
-    if (pathname === "/" && hash) {
-      // S'il s'agit de la page d'accueil et qu'il y a un hash dans l'URL,
-      // nous scrollerons vers l'élément approprié.
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [pathname, hash]);
+  }, [hash]); // On exécute cette logique chaque fois que le hash change
 
   return null;
 }
