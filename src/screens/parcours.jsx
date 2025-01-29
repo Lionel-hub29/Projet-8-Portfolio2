@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image1 from "../assets/parallax/paie.webp";
 import Image2 from "../assets/parallax/entreprise.jpg";
@@ -19,34 +19,29 @@ const images = [
     description2: "ADP-GSI",
     description3: "2006 - 2008",
   },
-
   {
     img: Image2,
     description: "Chef d'entreprise secteur alimentaire",
     description2: "2008-2011",
   },
-
   {
     img: Image3,
     description: "Coordinateur Paie",
     description2: "Celio*",
     description3: "2011 - 2018",
   },
-
   {
     img: Image4,
     description: "Responsable Paie",
     description2: "Piriou",
     description3: "2020 - 2022",
   },
-
   {
     img: Image5,
     description: "Consultant Paie",
     description2: "Inter Mutuelle Assistance",
     description3: "2023",
   },
-
   {
     img: Image6,
     description: "Chef de Projet SIRH",
@@ -85,6 +80,11 @@ export default function App() {
     damping: 30,
     restDelta: 0.001,
   });
+
+  // Réinitialiser la position du scroll à 0 quand la page est montée
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

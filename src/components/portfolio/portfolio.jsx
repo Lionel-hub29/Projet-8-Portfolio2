@@ -73,7 +73,7 @@ const Portfolio = () => {
       title: "Kasa",
       category: "front-end",
       description:
-        "Implémenter le front-end d’une application en utilisant Reactet React Router pour créer une expérience utilisateur moderne et réactive.",
+        "Implémenter le front-end d’une application en utilisant React et React Router pour créer une expérience utilisateur moderne et réactive.",
       imgSrc: Kasa,
       tags: ["HTML", "CSS", "React", "Express", "GitHub"],
       githubLink: "https://github.com/Lionel-hub29/Projet_5_Kasa",
