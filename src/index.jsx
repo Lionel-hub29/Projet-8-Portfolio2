@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Router from "./Router.jsx";
