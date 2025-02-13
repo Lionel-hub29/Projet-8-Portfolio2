@@ -39,7 +39,7 @@ const Portfolio = () => {
       title: "Booki",
       category: "front-end",
       description:
-        "Créer la page d'accueil d'une agence de voyage en utilisant HTML et CSS.",
+        "Créer la page d'accueil d'une agence de voyage en utilisant HTML et CSS. L’entreprise souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix.",
       imgSrc: Booki,
       tags: ["HTML", "CSS", "GitHub"],
       githubLink: "https://github.com/Lionel-hub29/Projet-2",
@@ -47,24 +47,18 @@ const Portfolio = () => {
     {
       title: "Sophie Bluel",
       category: "front-end",
-      description: "Créer une page web dynamique avec JavaScript",
+      description:
+        "Créer une page web dynamique avec JavaScript. Vous êtes un développeur front-end d’une équipe qui travaille sur la conception du site portfolio d’une architecte d’intérieur.",
       imgSrc: Bluel,
       tags: ["HTML", "CSS", "Javascript", "Express", "GitHub"],
       githubLink: "https://github.com/Lionel-hub29/Projet-3-Sophie-Bluel",
     },
-    {
-      title: "Mon Vieux Grimoire",
-      category: "back-end",
-      description: "Développer le back-end d'un site de notation de livres.",
-      imgSrc: Grimoire,
-      tags: ["React", "NodeJs", "Express", "MongoDB", "GitHub"],
-      githubLink: "https://github.com/Lionel-hub29/P6-Mon-vieux-Grimoire",
-    },
+
     {
       title: "Nina Carducci",
       category: "front-end",
       description:
-        "Optimiser le référencement d’un site, en améliorant sa performance et son accessibilité.",
+        "Optimiser le référencement d’un site, en améliorant sa performance et son accessibilité. Corriger des bugs de filtres et de navigation dans une modale",
       imgSrc: Carducci,
       tags: ["HTML", "CSS", "Javascript", "Express", "GitHub"],
       githubLink: "https://github.com/Lionel-hub29/Projet-4-Nina-Carducci",
@@ -79,6 +73,16 @@ const Portfolio = () => {
       githubLink: "https://github.com/Lionel-hub29/Projet_5_Kasa",
     },
     {
+      title: "Mon Vieux Grimoire",
+      category: "back-end",
+      description:
+        "Développer le back-end d'un site de notation de livres. Vous êtes développeur back-end et vous travaillez avec Kévin, un développeur front-end plus expérimenté que vous. ",
+      imgSrc: Grimoire,
+      tags: ["React", "NodeJs", "Express", "MongoDB", "GitHub"],
+      githubLink: "https://github.com/Lionel-hub29/P6-Mon-vieux-Grimoire",
+    },
+
+    {
       title: "Qwenta",
       category: "projet",
       description:
@@ -90,7 +94,7 @@ const Portfolio = () => {
     {
       title: "Portfolio",
       category: "front-end",
-      description: "Création de votre propre portfolio de développeur.",
+      description: "Création de votre propre portfolio de développeur web.",
       imgSrc: Pres,
       tags: ["React", "NodeJs", "GitHub", "Bootstrap"],
       githubLink: "https://github.com/Lionel-hub29/Projet-8-Portfolio",

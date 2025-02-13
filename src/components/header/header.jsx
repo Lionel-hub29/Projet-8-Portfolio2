@@ -1,8 +1,19 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setIsOpen(false); // Ferme le menu après un clic sur un lien
+  };
+
   return (
     <div className="header">
       <div className="fixed-header">
@@ -13,37 +24,58 @@ function Header() {
             <div className="container-fluid">
               {/* Bouton du menu burger */}
               <button
-                className="navbar-toggler"
+                className={`navbar-toggler ${isOpen ? "" : "collapsed"}`}
                 type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
+                onClick={toggleMenu}
+                aria-expanded={isOpen}
                 aria-label="Toggle navigation"
               >
-                <span className="navbar-toggler-icon"></span>
+                <div className="custom-toggler">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </button>
 
               {/* Menu */}
-              <div className="collapse navbar-collapse" id="navbarNav">
+              <div
+                className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+                id="navbarNav"
+              >
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/#presentation">
+                    <Link
+                      className="nav-link"
+                      to="/#presentation"
+                      onClick={handleNavLinkClick}
+                    >
                       Présentation
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/#projets">
+                    <Link
+                      className="nav-link"
+                      to="/#projets"
+                      onClick={handleNavLinkClick}
+                    >
                       Projets
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/parcours">
+                    <Link
+                      className="nav-link"
+                      to="/parcours"
+                      onClick={handleNavLinkClick}
+                    >
                       Mon Parcours
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/#contact">
+                    <Link
+                      className="nav-link"
+                      to="/#contact"
+                      onClick={handleNavLinkClick}
+                    >
                       Contact
                     </Link>
                   </li>
