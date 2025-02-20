@@ -7,7 +7,7 @@ ul {
  }
 
 .project {
-    padding: 20px 0;
+    padding: 20px 0px;
 } 
 
 .title-project {
@@ -37,30 +37,39 @@ ul {
  
 .card-container {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    row-gap: 20px;
-    column-gap: 20px;
+    gap: 15px;
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
-}   
+    justify-items: center;
+}  
 
-.card-portfolio {
+.card-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+}
+
+.card-container > * {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.card-portfolio {
+    flex: 1 1 500px;  
+    max-width: 520px;
+    display: flex;
+    justify-content: center;
 }
 
 .card-portfolio-unite {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 520px;
     background-color: rgb(247, 239, 231);
     height: 100%;
-    max-height: auto;
     min-height: 630px;
 }  
 
@@ -75,7 +84,7 @@ ul {
 
 .card-portfolio-unite li {
     border: 1px solid;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 50px;
     margin: 7px;
     width: 100%;
@@ -92,6 +101,10 @@ ul {
     justify-content: center;
     color: rgb(52, 43, 182);
 }
+
+.svg-inline--fa {
+    padding-right: 2px;
+  }
 
 .card-img-top {
     padding: 5px;
@@ -114,6 +127,7 @@ ul {
 }
 
 .card-body {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content:baseline;
@@ -173,6 +187,33 @@ ul {
     font-size: 40px;
 }
 
+@media (min-width: 1050px) {
+    .card-container > * {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+.card-container {
+    display: grid;
+    padding: 0 10px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: stretch;
+    
+}
+
+.card-portfolio-unite {
+    height: 100%;
+}
+
+.card-portfolio {
+    height: 100%;
+}
+
+}
+
 @media (max-width: 600px) {
 
 .portfolio-text-formation h5 {
@@ -186,14 +227,17 @@ ul {
 .btn-group {
     gap: 5px;
     flex-wrap: wrap;
+    padding: 10px;
     
 }
 
 .card-container{
     padding: 10px;
+    flex-direction: column;
+    grid-template-columns: 1fr;
 }
 
-.card-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.card-portfolio {
+    flex: 1 1 300px;
 }
 }

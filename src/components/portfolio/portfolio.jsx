@@ -11,7 +11,9 @@ import {
   faBootstrap,
   faReact,
   faNodeJs,
+  faNeos,
 } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import Booki from "../../assets/images/booki.png";
 import Bluel from "../../assets/images/bluel.png";
 import Carducci from "../../assets/images/carducci.png";
@@ -32,7 +34,11 @@ const Portfolio = () => {
     Bootstrap: faBootstrap,
     React: faReact,
     NodeJs: faNodeJs,
+    Express: faJs,
+    MongoDB: faDatabase,
+    Notion: faNeos,
   };
+
   // Définir les projets et leur catégorie (front-end, back-end, etc.)
   const projects = [
     {
@@ -108,7 +114,7 @@ const Portfolio = () => {
   });
 
   return (
-    <div className="project bg-light">
+    <div className="project bg-body-tertiary">
       <div className="title-project">
         <h1>Projets</h1>
       </div>
@@ -140,42 +146,44 @@ const Portfolio = () => {
 
       <div className="card-container">
         {filteredProjects.map((project, index) => (
-          <div className="card-portfolio" key={index}>
-            <Card className="card-portfolio-unite">
-              <Card.Img
-                variant="top"
-                className="card-img-top"
-                src={project.imgSrc}
-              />
-              <Card.Body>
-                <Card.Title className="title-project">
-                  <h1>{project.title}</h1>
-                </Card.Title>
-                <Card.Text className="text-presentation-card">
-                  {project.description}
-                </Card.Text>
-                <Card.Text>
-                  <ul className="tags">
-                    {project.tags.map((tag, i) => (
-                      <li key={i}>
-                        <FontAwesomeIcon icon={iconMapping[tag]} /> {tag}
-                      </li>
-                    ))}
-                  </ul>
-                </Card.Text>
-                {project.githubLink && (
-                  <Card.Text className="lien-github">
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Lien GitHub pour ce projet
-                    </a>
+          <div className="card-wrapper" key={index}>
+            <div className="card-portfolio">
+              <Card className="card-portfolio-unite">
+                <Card.Img
+                  variant="top"
+                  className="card-img-top"
+                  src={project.imgSrc}
+                />
+                <Card.Body>
+                  <Card.Title className="title-project">
+                    <h1>{project.title}</h1>
+                  </Card.Title>
+                  <Card.Text className="text-presentation-card">
+                    {project.description}
                   </Card.Text>
-                )}
-              </Card.Body>
-            </Card>
+                  <Card.Text>
+                    <ul className="tags">
+                      {project.tags.map((tag, i) => (
+                        <li key={i}>
+                          <FontAwesomeIcon icon={iconMapping[tag]} /> {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card.Text>
+                  {project.githubLink && (
+                    <Card.Text className="lien-github">
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Lien GitHub pour ce projet
+                      </a>
+                    </Card.Text>
+                  )}
+                </Card.Body>
+              </Card>
+            </div>
           </div>
         ))}
       </div>
