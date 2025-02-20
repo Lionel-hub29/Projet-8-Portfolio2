@@ -22,7 +22,6 @@ function Header() {
         <div className="content">
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-              {/* Bouton du menu burger */}
               <button
                 className={`navbar-toggler ${isOpen ? "" : "collapsed"}`}
                 type="button"
@@ -37,7 +36,6 @@ function Header() {
                 </div>
               </button>
 
-              {/* Menu */}
               <div
                 className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
                 id="navbarNav"

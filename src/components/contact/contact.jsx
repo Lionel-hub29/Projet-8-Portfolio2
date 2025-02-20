@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import "./contact.css";
 
 function Contact() {
+  //initialisation des données
   const initialFormData = {
     nom: "",
     prenom: "",
@@ -22,10 +23,12 @@ function Contact() {
     setFormData({ ...formData, [name]: value });
   };
 
+  //gestion de l'envoi du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:5000/send", {
+        //envoi en requête POST les données saisies
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -43,6 +46,8 @@ function Contact() {
       alert("Une erreur est survenue.");
     }
   };
+
+  //structure du formulaire
 
   return (
     <div className="contact" id="contact">
